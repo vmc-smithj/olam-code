@@ -1,0 +1,10 @@
+---
+- name: Example Create a Directory
+  hosts: all
+  become: True
+  tasks:
+    - name: Ensure a Directory Exists /opt/backup
+      ansible.builtin.file:
+        path: /opt/backup
+        state: directory
+        mode: '0755'   # Set permissions
